@@ -77,7 +77,7 @@ exports.getMusicInfo = (req, res) => {
         const name = $(".info h1#title").text().trim();
         const singer = $(".info h2#title").text();
 
-        const music = $("#audio source").attr("src");
+        const music = $("audio source").attr("src");
 
         const lyric = $("#full-lyric").html();
 

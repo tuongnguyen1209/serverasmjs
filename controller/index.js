@@ -77,7 +77,10 @@ exports.getMusicInfo = (req, res) => {
         const name = $(".info h1#title").text().trim();
         const singer = $(".info h2#title").text();
 
-        const music = $("audio source").attr("src");
+        let music = $("audio source").attr("src");
+
+        if (!music)
+          music = "https://nhacpro.me/stream/" + id.split(".")[1] + ".mp3";
 
         const lyric = $("#full-lyric").html();
 
@@ -105,18 +108,18 @@ exports.getMusicInfo = (req, res) => {
         // console.log(name, singer, avt, music);
         // console.log(lyric);
 
-        res.send(body);
-        // res.status(200).json({
-        //   status: "success",
-        //   data: {
-        //     avt,
-        //     name,
-        //     singer,
-        //     music,
-        //     lyric,
-        //     listSuggest,
-        //   },
-        // });
+        // res.send(body);
+        res.status(200).json({
+          status: "success",
+          data: {
+            avt,
+            name,
+            singer,
+            music,
+            lyric,
+            listSuggest,
+          },
+        });
       } catch (error) {
         console.log(error);
         return res.status(400).json({

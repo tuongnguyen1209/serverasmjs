@@ -105,18 +105,18 @@ exports.getMusicInfo = (req, res) => {
         // console.log(name, singer, avt, music);
         // console.log(lyric);
 
-        // res.send(body);
-        res.status(200).json({
-          status: "success",
-          data: {
-            avt,
-            name,
-            singer,
-            music,
-            lyric,
-            listSuggest,
-          },
-        });
+        res.send(body);
+        // res.status(200).json({
+        //   status: "success",
+        //   data: {
+        //     avt,
+        //     name,
+        //     singer,
+        //     music,
+        //     lyric,
+        //     listSuggest,
+        //   },
+        // });
       } catch (error) {
         console.log(error);
         return res.status(400).json({

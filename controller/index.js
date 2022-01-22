@@ -84,7 +84,7 @@ exports.getMusicInfo = (req, res) => {
         const listSugetion = $(".right-content .menu");
 
         const listSuggest = [];
-        // console.log(music);
+        console.log(music);
 
         for (let i = 0; i < listSugetion.length; i++) {
           const element = listSugetion[i];
